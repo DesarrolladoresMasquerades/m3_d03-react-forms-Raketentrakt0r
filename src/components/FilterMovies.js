@@ -2,7 +2,16 @@ import { useState } from "react";
 
 function FilterMovies(props) {
 
-  
+  const [firstLetter,setFirstLetter]= useState("All")
+
+  const handleSelect = (e) => {
+    e.preventDefault()
+      const letter = e.target.value
+
+    props.filterMovies(letter)
+  }
+      
+
 
   return (
     <div className="FilterMovies">
